@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif, cursive;
   line-height: 1.5;
   font-weight: 400;
 
@@ -24,6 +24,7 @@ a:hover {
 
 body {
   margin: 0;
+  background:radial-gradient(#E2001A,#1A181C);
   display: flex;
   place-items: center;
   min-width: 320px;
