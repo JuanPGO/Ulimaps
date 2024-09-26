@@ -1,62 +1,54 @@
 import React from 'react';
-import '../styles/welcome.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
+import '../styles/login.css';
+import { Link } from 'react-router-dom';
 
 
-
-const WelcomeInterface: React.FC = () => {
+const LoginInterface: React.FC = () => {
     return (
         <div className="contenedor-bienvenida">
 
             <div className='contenedor-interior1'>
 
-                <div className="divNavegacion">
+                <div className="contenedor-interior2">
 
-                    <nav className="navegacion">
-                        <button className="boton-nav">
-                            
-                            <FontAwesomeIcon icon={faMapLocationDot} style={{color: "#ffffff",}} />
+                    <div className="escudo">
 
-                        </button>
-                    </nav>
+                        <img src="./src/assets/img/fotos/escudo.png" alt="" />
 
-                </div>
+                    </div>
 
-                <div className="divEncabezado">
+                    <div className="login">
 
-                    <header className="encabezado">
-                        <button className="boton-logo">
-                            <img src="./src/assets/img/fotos/escudo.png" alt="Escudo Unilibre" />
-                        </button>
-                    </header>
+                        <form action="">
 
-                </div>
+                            <label htmlFor="">Usuario</label>
+                            <input type="text" name="usuarioInput" id="usuarioInput" />
 
-                <div className="divBienvenida">
+                            <label htmlFor="">Contraseña</label>
+                            <input type="password" name='contraseñaInput' id='contraseñaInput' />
 
-                    <main>
 
-                        <h1 className="titulo">Bienvenido</h1>
-                        <h2 className="subtitulo">Campus Belmonte, Pereira</h2>
+                        </form>
 
-                    </main>
+                    </div>
 
-                </div>
+                    <div className="buttonDiv">
 
-            </div>
-            
-            <div className="contenedor-interior2">
+                        <Link to="/" className='buttonIngreso'>
+                            <button>
+                                <span>Ingresar</span>
+                            </button>
+                        </Link>
+                        
 
-                <div className="imagenCampus">
+                    </div>
 
-                        <img src="./src/assets/img/fotos/fotoBienvenida.jpg" alt="Campus Belmonte ULibre" />                
                 </div>
 
             </div>
-            
+
         </div>
-    );
+    )
 };
 
-export default WelcomeInterface;
+export default LoginInterface;

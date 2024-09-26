@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 const WelcomeInterface: React.FC = () => {
     return (
+
         <div className="contenedor-bienvenida">
 
             <div className='contenedor-interior1'>
