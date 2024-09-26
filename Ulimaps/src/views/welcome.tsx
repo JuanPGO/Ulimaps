@@ -50,7 +50,7 @@ const WelcomeInterface: React.FC = () => {
 
                 <div className="imagenCampus">
 
-                        <img src="./src/assets/img/fotos/fotoBienvenida.jpg" alt="" />                
+                        <img src="./src/assets/img/fotos/fotoBienvenida.jpg" alt="Campus Belmonte ULibre" />                
                 </div>
 
             </div>
