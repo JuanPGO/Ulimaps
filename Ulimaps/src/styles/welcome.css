@@ -22,7 +22,8 @@ body {
 }
 
 .contenedor-interior1{
-    background: linear-gradient(#c9081f, #690410);
+    background: linear-gradient(#E2001A, #690410);
+    box-shadow: 0 0 20px black;
     width: 100%;
     height: 55vh;
     border-radius: 15px 15px 0 0;
@@ -41,7 +42,12 @@ body {
     height: 100%;
 }
 
-.navegacion button{
+.boton-nav-div {
+    padding-left: 0.7em;
+    padding-top: 0.4em;
+}
+
+.navegacion {
     height: 100%;
     width: 40px;
     border-radius: 50%;
@@ -59,12 +65,13 @@ body {
     align-items: center;
 }
 
+
 .encabezado{
     height: 100%;
     width: 33%;
 }
 
-.encabezado button{
+.encabezado .boton-logo{
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -72,7 +79,7 @@ body {
     padding: 0;
 }
 
-.encabezado button img{
+.encabezado .boton-logo img{
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -118,6 +125,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 0 0 15px 15px;
+    box-shadow: 0 0 20px black;
 }
 
 .contenedor-interior2 .imagenCampus img{
