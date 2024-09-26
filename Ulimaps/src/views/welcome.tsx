@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/welcome.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
-
+import { Link } from 'react-router-dom';
 
 
 const WelcomeInterface: React.FC = () => {
@@ -14,11 +14,14 @@ const WelcomeInterface: React.FC = () => {
                 <div className="divNavegacion">
 
                     <nav className="navegacion">
-                        <button className="boton-nav">
-                            
-                            <FontAwesomeIcon icon={faMapLocationDot} style={{color: "#ffffff",}} />
+                        <div className='boton-nav-div'>
 
-                        </button>
+                            <Link to="/map" className="boton-nav">
+                                <FontAwesomeIcon icon={faMapLocationDot} style={{color: "#ffffff",}} />
+                            </Link>
+
+                        </div>  
+
                     </nav>
 
                 </div>
@@ -26,9 +29,9 @@ const WelcomeInterface: React.FC = () => {
                 <div className="divEncabezado">
 
                     <header className="encabezado">
-                        <button className="boton-logo">
+                        <Link to="/login" className="boton-logo">
                             <img src="./src/assets/img/fotos/escudo.png" alt="Escudo Unilibre" />
-                        </button>
+                        </Link>
                     </header>
 
                 </div>
