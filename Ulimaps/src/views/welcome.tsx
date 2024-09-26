@@ -17,7 +17,7 @@ const WelcomeInterface: React.FC = () => {
                         <button className="boton-nav">
                             
                             <FontAwesomeIcon icon={faMapLocationDot} style={{color: "#ffffff",}} />
-                            
+
                         </button>
                     </nav>
 
@@ -26,9 +26,9 @@ const WelcomeInterface: React.FC = () => {
                 <div className="divEncabezado">
 
                     <header className="encabezado">
-                        <div className="boton-logo">
+                        <button className="boton-logo">
                             <img src="./src/assets/img/fotos/escudo.png" alt="Escudo Unilibre" />
-                        </div>
+                        </button>
                     </header>
 
                 </div>
