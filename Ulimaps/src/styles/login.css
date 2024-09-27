@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contenedor-bienvenida {
+    background: #c9081f;
+    min-height: 90vh;
+    width: 90%;
+    min-width: 300px;
+    max-width: 320px;
+    border-radius: 15px;
+}
+
+.contenedor-interior1{
+    background: linear-gradient(#E2001A, #690410);
+    box-shadow: 0 0 20px black;
+    width: 100%;
+    height: 90vh;
+    border-radius: 15px;
+    
+}
+
+.contenedor-interior2{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedor-interior2 .escudo{
+    /* border: solid white; */
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-interior2 .escudo img{
+    height: 12vh;
+    
+}
+.contenedor-interior2 .login{
+    /* border: solid white; */
+    height: 10vh;
+}
+.contenedor-interior2 .buttonDiv{
+    /* border: solid white; */
+    height: 9vh;
+}
+
+.login{
+    width: 90%;
+}
+
+.login form{
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    grid-template-rows: 30px 30px;
+}
+
+.login label{
+    font-family: "Kaisei Decol", serif;
+    color: white;
+    text-align: left;
+    font-size: 16px;
+}
+
+.login input{
+    border-radius: 7px;
+    border: none;
+    height: 22px;
+}
+
+.buttonDiv button{
+    border: 0;
+    background-image: linear-gradient(150deg, #a69f17, #a69f17, #000000);
+    border-radius: 20px;
+    color: #000000;
+    display: flex;
+    font-size: 18px;
+    padding: 4px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.buttonDiv button span{
+    background-color: #000000;
+    font-family: "Kaisei Decol", serif;
+    color: #fffffffb;
+    padding: 12px 20px;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+button:hover span{
+    background: none;
+}
+
+button:active{
+    transform: scale(0.12);
+}
