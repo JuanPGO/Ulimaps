@@ -15,10 +15,11 @@ const WelcomeInterface: React.FC = () => {
                 <div className="divNavegacion">
 
                     <nav className="navegacion">
+                        
                         <div className='boton-nav-div'>
 
                             <Link to="/map" className="boton-nav">
-                                <FontAwesomeIcon icon={faMapLocationDot} style={{color: "#ffffff",}} />
+                                <FontAwesomeIcon icon={faMapLocationDot} style={{color: "#ffffff", padding: 0, margin: 0}} />
                             </Link>
 
                         </div>  
@@ -41,7 +42,7 @@ const WelcomeInterface: React.FC = () => {
 
                     <main>
 
-                        <h1 className="titulo">Bienvenido</h1>
+                        <h1 className="titulo">Bievenido</h1>
                         <h2 className="subtitulo">Campus Belmonte, Pereira</h2>
 
                     </main>

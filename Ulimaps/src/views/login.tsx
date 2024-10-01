@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 const LoginInterface: React.FC = () => {
     return (
-        <div className="contenedor-bienvenida">
+        <div className="contenedor-bienvenida1">
 
-            <div className='contenedor-interior1'>
+            <div className='contenedor-interiorlogin1'>
 
-                <div className="contenedor-interior2">
+                <div className="contenedor-interiorlogin2">
 
                     <div className="escudo">
 

@@ -7,16 +7,20 @@ body {
     min-height: 100vh;
 }
 
-.contenedor-bienvenida {
+.contenedor-bienvenida1 {
     background: #c9081f;
-    min-height: 90vh;
-    width: 90%;
-    min-width: 300px;
-    max-width: 320px;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 80vw;
+    height: 90vh;
+    display: flex;
     border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.contenedor-interior1{
+.contenedor-interiorlogin1{
     background: linear-gradient(#E2001A, #690410);
     box-shadow: 0 0 20px black;
     width: 100%;
@@ -25,7 +29,7 @@ body {
     
 }
 
-.contenedor-interior2{
+.contenedor-interiorlogin2{
     width: 100%;
     height: 60vh;
     display: flex;
@@ -34,24 +38,24 @@ body {
     flex-direction: column;
 }
 
-.contenedor-interior2 .escudo{
+.contenedor-interiorlogin2 .escudo{
     /* border: solid white; */
     height: 12vh;
     display: flex;
     justify-content: center;
 }
 
-.contenedor-interior2 .escudo img{
+.contenedor-interiorlogin2 .escudo img{
     height: 12vh;
     
 }
-.contenedor-interior2 .login{
-    /* border: solid white; */
+.contenedor-interiorlogin2 .login{
+    
     height: 10vh;
 }
-.contenedor-interior2 .buttonDiv{
-    /* border: solid white; */
-    height: 9vh;
+.contenedor-interiorlogin2 .buttonDiv{
+/*     border: solid white; */
+    height: 7vh;
 }
 
 .login{
@@ -59,6 +63,7 @@ body {
 }
 
 .login form{
+    width: 100%;
     display: grid;
     grid-template-columns: 95px 1fr;
     grid-template-rows: 30px 30px;
@@ -96,6 +101,11 @@ body {
     padding: 12px 20px;
     border-radius: 20px;
     transition: .3s;
+    
+}
+
+.buttonIngreso{
+    text-decoration: none;
 }
 
 button:hover span{
@@ -104,4 +114,52 @@ button:hover span{
 
 button:active{
     transform: scale(0.12);
+}
+
+@media (max-width: 1600px){
+
+
+    .contenedor-bienvenida1 {
+        background: #c9081f;
+        width: 30vw;
+        height: 90vh;
+        display: flex;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1000px){
+
+
+    .contenedor-bienvenida1 {
+        background: #c9081f;
+        width: 80vw;
+        height: 90vh;
+        display: flex;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .login label{
+        font-family: "Kaisei Decol", serif;
+        color: white;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .login{
+        width: 90%;
+    }
+
+    .login form{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        grid-template-rows: 30px 30px;
+    }
 }
