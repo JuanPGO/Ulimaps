@@ -34,7 +34,7 @@ const LoginInterface: React.FC = () => {
 
                     <div className="buttonDiv">
 
-                        <Link to="/" className='buttonIngreso'>
+                        <Link to="/crud" className='buttonIngreso'>
                             <button>
                                 <span>Ingresar</span>
                             </button>

@@ -5,6 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    
 }
 
 .contenedor-bienvenida1 {
@@ -63,9 +64,9 @@ body {
 }
 
 .login form{
-    width: 100%;
+    width: 30%;
     display: grid;
-    grid-template-columns: 95px 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 30px 30px;
 }
 
@@ -74,6 +75,7 @@ body {
     color: white;
     text-align: left;
     font-size: 16px;
+    grid-column: 1;
 }
 
 .login input{
@@ -129,6 +131,32 @@ button:active{
         align-items: center;
         flex-direction: column;
     }
+
+    .login{
+        width: 90%;
+    }
+
+    .login form{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 30px 30px;
+    }
+
+    .login label{
+        font-family: "Kaisei Decol", serif;
+        color: white;
+        text-align: left;
+        font-size: 16px;
+        grid-column: 1;
+    }
+    
+    .login input{
+        border-radius: 7px;
+        border: none;
+        height: 22px;
+        grid-column: 2 / 4;
+    }
 }
 
 @media (max-width: 1000px){
@@ -159,7 +187,7 @@ button:active{
     .login form{
         width: 100%;
         display: grid;
-        grid-template-columns: 90px 1fr;
+        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 30px 30px;
     }
 }

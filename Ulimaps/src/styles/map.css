@@ -26,6 +26,7 @@ body {
 }
 
 .navegacionDiv{
+    box-shadow: 0 0 20px black;
     background-color:  #690410;
     width: 100%;
     height: 8%;
