@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/login.css';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons/faArrowRightFromBracket';
 
 
 const LoginInterface: React.FC = () => {
@@ -40,6 +42,14 @@ const LoginInterface: React.FC = () => {
                             </button>
                         </Link>
                         
+
+                    </div>
+
+                    <div className="divOut">
+
+                        <Link to="/" className="boton-out">
+                            <FontAwesomeIcon icon={faArrowRightFromBracket} rotation={180} style={{color: "#ffffff",}} />
+                        </Link>
 
                     </div>
 

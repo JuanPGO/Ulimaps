@@ -7,6 +7,8 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons/faArrowRightFromBracket';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 const CrudInterface: React.FC = () => {
@@ -79,8 +81,16 @@ const CrudInterface: React.FC = () => {
                             <td>6000</td>
                             <td>Activo</td>
                             <td>
-                                <Button variant="primary" size='sm'>Editar</Button>
-                                <Button variant="danger" size='sm'>Eliminar</Button>
+                                <Button variant="primary" size='sm'>
+
+                                    <FontAwesomeIcon icon={faPen} />
+
+                                </Button>
+                                <Button variant="danger" size='sm'>
+
+                                    <FontAwesomeIcon icon={faTrash} />
+
+                                </Button>
                             </td>
                         </tr>
                         <tr>

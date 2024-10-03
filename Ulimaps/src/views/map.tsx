@@ -34,20 +34,34 @@ const MapInterface: React.FC = () => {
             
             <div className="mapa">
 
-                <MapContainer center={[4.806004, -75.760249]} zoom={40} style={{ height: '100%', width: '100%'}}>
+                <MapContainer scrollWheelZoom={true} center={[4.806004, -75.760249]} zoom={13} style={{ height: '100%', width: '100%'}}>
                 
                     <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
 
-                    <Marker position={[4.806004, -75.760249]} >
+                    <Marker position={[4.806250, -75.760109]} >
                         <Popup>
 
+                            <button>
+                                Boton
+                            </button>
+                        </Popup>
+                    </Marker>
+
+                    <Marker position={[4.806228, -75.760606]}>
+                        <Popup>
+                            <span>Hola</span>
                         </Popup>
                     </Marker>
 
                 </MapContainer>
 
+            </div>
+
+            <div className="navegacionDiv2">
+                
             </div>
 
         </div>
