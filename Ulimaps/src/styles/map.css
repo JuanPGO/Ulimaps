@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 100vh;
+}
+
+.custom-marker {
+    background-color: blue; /* Cambia el color a lo que necesites */
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; /* Forma circular */
+  }
+
+.contenedor-bienvenidamap {
+    background: #c9081f;
+
+    max-width: 100vw;
+    max-height: 90vh;
+
+    width: 90vw;
+    height: 90vh;
+
+    display: flex;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navegacionDiv{
+    box-shadow: 0 0 20px black;
+    background-color:  #690410;
+    width: 100%;
+    height: 8%;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navegacionDiv2{
+    box-shadow: 0 0 20px black;
+    background-color:  #690410;
+    width: 100%;
+    height: 5%;
+    border-radius: 0 0 15px 15px;
+}
+
+
+.mapa{
+    width: 100%;
+    height: 92%;
+    border-radius: 0 0 15px 15px;
+}
+
+
+@media (max-width: 1600px){
+
+
+    .contenedor-bienvenidamap {
+        background: #c9081f;
+        width: 30vw;
+        height: 90vh;
+        display: flex;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1000px){
+
+
+    .contenedor-bienvenidamap {
+        background: #c9081f;
+        width: 90vw;
+        height: 90vh;
+        display: flex;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
