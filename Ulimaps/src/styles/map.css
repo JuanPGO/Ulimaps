@@ -9,6 +9,13 @@ body {
     height: 100vh;
 }
 
+.custom-marker {
+    background-color: blue; /* Cambia el color a lo que necesites */
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; /* Forma circular */
+  }
+
 .contenedor-bienvenidamap {
     background: #c9081f;
 

@@ -42,7 +42,7 @@ const WelcomeInterface: React.FC = () => {
 
                     <main>
 
-                        <h1 className="titulo">Bievenido</h1>
+                        <h1 className="titulo">Bienvenido</h1>
                         <h2 className="subtitulo">Campus Belmonte, Pereira</h2>
 
                     </main>
