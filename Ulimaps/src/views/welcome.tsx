@@ -15,10 +15,11 @@ const WelcomeInterface: React.FC = () => {
                 <div className="divNavegacion">
 
                     <nav className="navegacion">
+                        
                         <div className='boton-nav-div'>
 
                             <Link to="/map" className="boton-nav">
-                                <FontAwesomeIcon icon={faMapLocationDot} style={{color: "#ffffff",}} />
+                                <FontAwesomeIcon icon={faMapLocationDot} style={{color: "#ffffff", padding: 0, margin: 0}} />
                             </Link>
 
                         </div>  
