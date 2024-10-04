@@ -9,15 +9,8 @@ body {
     height: 100vh;
 }
 
-.custom-marker {
-    background-color: blue; /* Cambia el color a lo que necesites */
-    width: 20px;
-    height: 20px;
-    border-radius: 50%; /* Forma circular */
-  }
-
-.contenedor-bienvenidamap {
-    background: #c9081f;
+.contenedor-origin {
+    background: #6e0612;
 
     max-width: 50vw;
     max-height: 90vh;
@@ -32,7 +25,7 @@ body {
     flex-direction: column;
 }
 
-.navegacionDiv{
+.navegacionDivOrigin{
     box-shadow: 0 0 20px black;
     background-color:  #690410;
     width: 100%;
@@ -40,94 +33,138 @@ body {
     border-radius: 15px 15px 0 0;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
 }
 
-.navegacionDiv2{
-    box-shadow: 0 0 20px black;
-    background-color:  #690410;
-    width: 100%;
-    height: 5%;
-    border-radius: 0 0 15px 15px;
-}
-
-.mapa{
-    width: 100%;
-    height: 92%;
-    border-radius: 0 0 15px 15px;
-}
-
-.headerIcon{
-    background-color: #940b1b;
-    width: 100%;
-    border-radius: 6px 6px 0 0 ;
+.locationCloseTo{
+    width: 90%;
     text-align: center;
 }
 
-.headerIcon span{
+.locationCloseTo span{
     font-family: "Kaisei Decol", serif;
     color: white;
-    font-size: 12px;
+    font-size: 18px;
 }
 
-.bodyIcon{
+.bodyContainer{
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    height: 92%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 5px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.bodyIcon .imagenIcon{
-    width: 50%;
+
+.locationName{
+    /* border: white solid 1px; */
+    width: 100%;
+    text-align: center;
+    background-color: #690410;
 }
 
-.bodyIcon .imagenIcon img{
+.locationName span{
+    font-family: "Kaisei Decol", serif;
+    color: white;
+    font-size: 30px;
+}
+
+.locationPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+    background-color: #690410;
+}
+
+.locationPage button{
+    width: 30%;
+    border: none;
+    border-radius: 20px;
+    font-family: "Kaisei Decol", serif;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    background-color: #8a8213;
+}
+
+.locationPage button:hover{
+    background-color: #940b1b;
+    font-size: 18px;
+}
+
+.locationImage{
+    width: 100%;
+    height: 40%;
+}
+
+.locationImage img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 15px;
 }
 
-.infoIcon{
+.bodyContainerBottom{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.locationQuestion{
+    width: 100%;
+    text-align: center;
+}
+
+.locationQuestion span{
+    font-family: "Kaisei Decol", serif;
+    color: rgb(255, 255, 255);
+    font-size: 19px;
+}
+
+.destinyButton{
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.nombreEicon{
-    text-align: center;
-    margin-bottom: 8px;
-}
-
-.nombreEicon span{
-    font-family: "Kaisei Decol", serif;
-    color: rgb(0, 0, 0);
-    font-size: 20px;
-}
-
-.buttonSeeMore button{
+.destinyButton select{
     border: none;
-    border-radius: 20px;
-    font-family: "Kaisei Decol", serif;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    background-color: #c50a20;
+    border-radius: 5px;
+    width: 70%;
 }
 
-.buttonSeeMore button:hover{
-    background-color: #940b1b;
-    font-size: 18px;
+.startButton{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.startButton button{
+    background-color: #ffff;
+    border: none;
+    width: 30%;
+    border-radius: 5px;
+}
+
+.startButton button span{
+    margin-right: 7px;
+    font-size: 20px;
 }
 
 @media (max-width: 2000px){
 
 
-    .contenedor-bienvenidamap {
-        background: #c9081f;
+    .contenedor-origin {
+        background: #6e0612;
         width: 30vw;
         height: 90vh;
         display: flex;
@@ -142,8 +179,8 @@ body {
 @media (max-width: 1600px){
 
 
-    .contenedor-bienvenidamap {
-        background: #c9081f;
+    .contenedor-origin {
+        background: #6e0612;
         width: 30vw;
         height: 90vh;
         display: flex;
@@ -157,8 +194,8 @@ body {
 @media (max-width: 1000px){
 
 
-    .contenedor-bienvenidamap {
-        background: #c9081f;
+    .contenedor-origin {
+        background: #6e0612;
         max-width: 80vw;
         width: 90vw;
         height: 90vh;
@@ -172,8 +209,8 @@ body {
 
 @media (max-width: 515px){
 
-    .contenedor-bienvenidamap {
-        background: #c9081f;
+    .contenedor-origin {
+        background: #b10c20;
         max-width: 95vw;
         width: 95vw;
         height: 90vh;

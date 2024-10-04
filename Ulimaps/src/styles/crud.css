@@ -49,10 +49,16 @@ body {
     width: 95%;
 }
 
-.contenedorTabla th{
-    max-width: 1fr;
+.headerEdit{
+    width: 40px;
 }
 
+.columnaEdit{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
 
 @media (max-width: 1600px){
@@ -81,6 +87,31 @@ body {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+
+    .contenedorTabla{
+        margin-top: 30px;
+        min-width: 100px;
+    }
+
+}
+@media (max-width: 580px){
+
+
+    .contenedorCrud {
+        background: #f1eeee;
+        width: 90vw;
+        height: 90vh;
+        display: flex;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .contenedorTabla{
+        margin-top: 30px;
+        min-width: 100px;
     }
 
 }

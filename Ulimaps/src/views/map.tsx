@@ -3,23 +3,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRoute, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import customMarkerIcon from '../assets/img/botones/locationDot.png'; // Ícono PNG
+import customMarkerIcon from '../assets/img/botones/locationDot.png';
 import L from 'leaflet';
 
 const MapInterface: React.FC = () => {
   
     const customIcon = new L.Icon({
         iconUrl: customMarkerIcon,
-        iconSize: [32, 32],
+        iconSize: [25, 32],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],
       });
 
     return (
     <div className="contenedor-bienvenidamap">
+
       <div className="navegacionDiv">
+
         <div className='boton-nav-div1'>
-          <Link to="/map" className="boton-nav">
+          <Link to="/origin" className="boton-nav">
             <FontAwesomeIcon icon={faRoute} style={{ color: "#ffffff", padding: 0, margin: 0 }} />
           </Link>
         </div>
@@ -29,6 +31,7 @@ const MapInterface: React.FC = () => {
             <FontAwesomeIcon icon={faArrowRightFromBracket} rotation={180} style={{ color: "#ffffff" }} />
           </Link>
         </div>
+
       </div>
 
       <div className="mapa">
@@ -40,15 +43,35 @@ const MapInterface: React.FC = () => {
 
           <Marker position={[4.806250, -75.760109]} icon={customIcon}>
             <Popup>
-              <button>Botón</button>
+              <div className="headerIcon">
+                <span>Edificio Daniel Becerra Piedrahita</span>
+              </div>
+              <div className="bodyIcon">
+
+                <div className="imagenIcon">
+                  <img src="../src/assets/img/fotos/fotoBienvenida.jpg" alt="" />
+                </div>
+
+                <div className="infoIcon">
+                    
+                  <div className="nombreEicon">
+                    <span>Bloque C</span>
+                  </div>
+
+                  {/* Se agrega el link a la interfaz correspondiente */}
+
+                  <div className="buttonSeeMore">
+                    <button>Ver más</button>
+                  </div>
+
+                </div>
+
+              </div>
+              
             </Popup>
           </Marker>
 
-          <Marker position={[4.806228, -75.760606]} icon={customIcon}>
-            <Popup>
-              <span>Hola</span>
-            </Popup>
-          </Marker>
+
         </MapContainer>
       </div>
 

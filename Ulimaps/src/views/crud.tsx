@@ -69,7 +69,7 @@ const CrudInterface: React.FC = () => {
                             <th>Latitud</th>
                             <th>Longitud</th>
                             <th>Activo</th>
-                            <th>Acciones</th>
+                            <th className='headerEdit'>Acciones</th>
                             
                         </tr>
                     </thead>
@@ -80,13 +80,13 @@ const CrudInterface: React.FC = () => {
                             <td>5000</td>
                             <td>6000</td>
                             <td>Activo</td>
-                            <td>
-                                <Button variant="primary" size='sm'>
+                            <td className='columnaEdit'>
+                                <Button variant="primary" size='sm' className='accionButton'>
 
                                     <FontAwesomeIcon icon={faPen} />
 
                                 </Button>
-                                <Button variant="danger" size='sm'>
+                                <Button variant="danger" size='sm' className='accionButton'>
 
                                     <FontAwesomeIcon icon={faTrash} />
 
@@ -99,6 +99,18 @@ const CrudInterface: React.FC = () => {
                             <td>5000</td>
                             <td>6000</td>
                             <td>Inactivo</td>
+                            <td className='columnaEdit'>
+                                <Button variant="primary" size='sm' className='accionButton'>
+
+                                    <FontAwesomeIcon icon={faPen} />
+
+                                </Button>
+                                <Button variant="danger" size='sm' className='accionButton'>
+
+                                    <FontAwesomeIcon icon={faTrash} />
+
+                                </Button>
+                            </td>
                         </tr>
                         <tr>
                             <td>3</td>
@@ -106,6 +118,18 @@ const CrudInterface: React.FC = () => {
                             <td>5000</td>
                             <td>6000</td>
                             <td>Activo</td>
+                            <td className='columnaEdit'>
+                                <Button variant="primary" size='sm' className='accionButton'>
+
+                                    <FontAwesomeIcon icon={faPen} />
+
+                                </Button>
+                                <Button variant="danger" size='sm' className='accionButton'>
+
+                                    <FontAwesomeIcon icon={faTrash} />
+
+                                </Button>
+                            </td>
                         </tr>
                     </tbody>
                 </Table>
