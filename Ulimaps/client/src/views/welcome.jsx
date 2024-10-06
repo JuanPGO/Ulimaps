@@ -1,65 +1,44 @@
-import React from 'react';
+// archivo welcome.jsx
 import '../styles/welcome.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-
-const WelcomeInterface: React.FC = () => {
+const WelcomeInterface = () => {
     return (
-
         <div className="contenedor-bienvenida">
-
-            <div className='contenedor-interior1'>
-
+            <div className="contenedor-interior1">
                 <div className="divNavegacion">
-
                     <nav className="navegacion">
-                        
-                        <div className='boton-nav-div'>
-
+                        <div className="boton-nav-div">
                             <Link to="/map" className="boton-nav">
-                                <FontAwesomeIcon icon={faMapLocationDot} style={{color: "#ffffff", padding: 0, margin: 0}} />
+                                <FontAwesomeIcon icon={faMapLocationDot} style={{ color: "#ffffff", padding: 0, margin: 0 }} />
                             </Link>
-
-                        </div>  
-
+                        </div>
                     </nav>
-
                 </div>
 
                 <div className="divEncabezado">
-
                     <header className="encabezado">
                         <Link to="/login" className="boton-logo">
-                            <img src="./src/assets/img/fotos/escudo.png" alt="Escudo Unilibre" />
+                            <img src="./client/src/assets/img/fotos/escudo.png" alt="Escudo Unilibre" />
                         </Link>
                     </header>
-
                 </div>
 
                 <div className="divBienvenida">
-
                     <main>
-
                         <h1 className="titulo">Bienvenido</h1>
                         <h2 className="subtitulo">Campus Belmonte, Pereira</h2>
-
                     </main>
-
                 </div>
-
             </div>
-            
+
             <div className="contenedor-interior2">
-
                 <div className="imagenCampus">
-
-                        <img src="./src/assets/img/fotos/fotoBienvenida.jpg" alt="Campus Belmonte ULibre" />                
+                    <img src="./client/src/assets/img/fotos/fotoBienvenida.jpg" alt="Campus Belmonte ULibre" />
                 </div>
-
             </div>
-            
         </div>
     );
 };
