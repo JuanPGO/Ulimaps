@@ -14,7 +14,7 @@ function App() {
           <Route path="/login" element={<LoginInterface />} />
           <Route path="/map" element={<MapInterface />} />
           <Route path="/crud" element={<CrudInterface />} />
-          <Route path='/origin' element={<OriginInterface />}></Route>
+          <Route path='/origin' element={<OriginInterface />} />
         </Routes>
       </div>
     </Router>
