@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 
-const   OriginInterface: React.FC = () => {
+const   OriginInterface = () => {
   
     return (
         <div className="contenedor-origin">
@@ -36,7 +36,7 @@ const   OriginInterface: React.FC = () => {
                 </div>
 
                 <div className="locationImage">
-                    <img src="../src/assets/img/fotos/albertoMesa.jpg" alt="" />
+                    <img src="./client/src/assets/img/fotos/albertoMesa.jpg" alt="" />
                 </div>
 
                 <div className="bodyContainerBottom">

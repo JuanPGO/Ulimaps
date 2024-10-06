@@ -19,7 +19,7 @@ const MapInterface = () => {
         <div className="contenedor-bienvenidamap">
             <div className="navegacionDiv">
                 <div className="boton-nav-div1">
-                    <Link to="/map" className="boton-nav">
+                    <Link to="/origin" className="boton-nav">
                         <FontAwesomeIcon icon={faRoute} style={{ color: "#ffffff", padding: 0, margin: 0 }} />
                     </Link>
                 </div>

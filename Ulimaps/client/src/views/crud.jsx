@@ -53,12 +53,8 @@ const CrudInterface = () => {
                             <th>Latitud</th>
                             <th>Longitud</th>
                             <th>Activo</th>
-<<<<<<< HEAD:Ulimaps/src/views/crud.tsx
                             <th className='headerEdit'>Acciones</th>
                             
-=======
-                            <th>Acciones</th>
->>>>>>> 5c481509a0773a4fa023dfd6629a9fbb0b5440fc:Ulimaps/client/src/views/crud.jsx
                         </tr>
                     </thead>
                     <tbody>
@@ -68,22 +64,13 @@ const CrudInterface = () => {
                             <td>5000</td>
                             <td>6000</td>
                             <td>Activo</td>
-<<<<<<< HEAD:Ulimaps/src/views/crud.tsx
                             <td className='columnaEdit'>
                                 <Button variant="primary" size='sm' className='accionButton'>
 
-=======
-                            <td>
-                                <Button variant="primary" size='sm'>
->>>>>>> 5c481509a0773a4fa023dfd6629a9fbb0b5440fc:Ulimaps/client/src/views/crud.jsx
                                     <FontAwesomeIcon icon={faPen} />
                                 </Button>
-<<<<<<< HEAD:Ulimaps/src/views/crud.tsx
                                 <Button variant="danger" size='sm' className='accionButton'>
 
-=======
-                                <Button variant="danger" size='sm'>
->>>>>>> 5c481509a0773a4fa023dfd6629a9fbb0b5440fc:Ulimaps/client/src/views/crud.jsx
                                     <FontAwesomeIcon icon={faTrash} />
                                 </Button>
                             </td>
