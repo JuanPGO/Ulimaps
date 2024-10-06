@@ -1,53 +1,39 @@
-import React from 'react';
+// archivo crud.jsx
 import '../styles/crud.css';
 import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons/faArrowRightFromBracket';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-
-const CrudInterface: React.FC = () => {
+const CrudInterface = () => {
     return (
-
         <div className="contenedorCrud">
-
             <div className="navHeader">
-                
                 <div className="navTitulo">
                     <h1>Panel de Control</h1>
                 </div>
-
                 <div className="navExit">
-
                     <Link to="/login" className="boton-nav">
-                        <FontAwesomeIcon icon={faArrowRightFromBracket} rotation={180} style={{color: "#ffffff",}} />
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} rotation={180} style={{ color: "#ffffff" }} />
                     </Link>
-
                 </div>
-
             </div>
 
             <div className="contenedorNav">
-
                 <Nav variant="pills" activeKey="1">
-
                     <NavDropdown title="Punto Interés Exterior" id="nav-dropdown" className='dropdownTitle'>
-                        
-                            <NavDropdown.Item eventKey="1.1">Edificios</NavDropdown.Item>
-                            <NavDropdown.Item eventKey="1.2">Parqueaderos</NavDropdown.Item>
-
+                        <NavDropdown.Item eventKey="1.1">Edificios</NavDropdown.Item>
+                        <NavDropdown.Item eventKey="1.2">Parqueaderos</NavDropdown.Item>
                     </NavDropdown>
 
                     <NavDropdown title="Pisos" id="nav-dropdown" className='dropdownTitle'>
-                        
-                            <NavDropdown.Item eventKey="2.1">Algo</NavDropdown.Item>
-                            <NavDropdown.Item eventKey="2.2">Algo</NavDropdown.Item>
-
+                        <NavDropdown.Item eventKey="2.1">Algo</NavDropdown.Item>
+                        <NavDropdown.Item eventKey="2.2">Algo</NavDropdown.Item>
                     </NavDropdown>
 
                     <NavDropdown title="Punto Interés Interno" id="nav-dropdown" className='dropdownTitle'>
@@ -56,12 +42,10 @@ const CrudInterface: React.FC = () => {
                         <NavDropdown.Item eventKey="3.3">Algo más</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
-
             </div>
 
             <div className="contenedorTabla">
-
-                <Table striped bordered hover >
+                <Table striped bordered hover>
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -69,8 +53,12 @@ const CrudInterface: React.FC = () => {
                             <th>Latitud</th>
                             <th>Longitud</th>
                             <th>Activo</th>
+<<<<<<< HEAD:Ulimaps/src/views/crud.tsx
                             <th className='headerEdit'>Acciones</th>
                             
+=======
+                            <th>Acciones</th>
+>>>>>>> 5c481509a0773a4fa023dfd6629a9fbb0b5440fc:Ulimaps/client/src/views/crud.jsx
                         </tr>
                     </thead>
                     <tbody>
@@ -80,16 +68,23 @@ const CrudInterface: React.FC = () => {
                             <td>5000</td>
                             <td>6000</td>
                             <td>Activo</td>
+<<<<<<< HEAD:Ulimaps/src/views/crud.tsx
                             <td className='columnaEdit'>
                                 <Button variant="primary" size='sm' className='accionButton'>
 
+=======
+                            <td>
+                                <Button variant="primary" size='sm'>
+>>>>>>> 5c481509a0773a4fa023dfd6629a9fbb0b5440fc:Ulimaps/client/src/views/crud.jsx
                                     <FontAwesomeIcon icon={faPen} />
-
                                 </Button>
+<<<<<<< HEAD:Ulimaps/src/views/crud.tsx
                                 <Button variant="danger" size='sm' className='accionButton'>
 
+=======
+                                <Button variant="danger" size='sm'>
+>>>>>>> 5c481509a0773a4fa023dfd6629a9fbb0b5440fc:Ulimaps/client/src/views/crud.jsx
                                     <FontAwesomeIcon icon={faTrash} />
-
                                 </Button>
                             </td>
                         </tr>
@@ -134,11 +129,8 @@ const CrudInterface: React.FC = () => {
                     </tbody>
                 </Table>
             </div>
-
-
-
-    </div>
-    )
+        </div>
+    );
 };
 
 export default CrudInterface;
