@@ -1,11 +1,11 @@
 {
-  "name": "ulimaps",
+  "name": "ulimap",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
-    "build": "tsc -b && vite build",
+    "dev": "vite",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -19,6 +19,8 @@
     "@popperjs/core": "^2.11.8",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
     "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
@@ -29,19 +31,15 @@
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.0",
-    "@types/leaflet": "^1.9.12",
-    "@types/react": "^18.3.3",
+    "@eslint/js": "^9.11.1",
+    "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^9.9.0",
+    "@vitejs/plugin-react": "^4.3.2",
+    "eslint": "^9.11.1",
+    "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.9",
-    "gh-pages": "^6.1.1",
+    "eslint-plugin-react-refresh": "^0.4.12",
     "globals": "^15.9.0",
-    "sass": "^1.79.3",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.7"
+    "vite": "^5.4.8"
   }
 }

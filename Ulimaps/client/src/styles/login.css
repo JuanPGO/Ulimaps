@@ -110,8 +110,7 @@ body {
     color: #fffffffb;
     padding: 12px 20px;
     border-radius: 20px;
-    transition: .3s;
-    
+    transition: .3s; 
 }
 
 .buttonIngreso{
