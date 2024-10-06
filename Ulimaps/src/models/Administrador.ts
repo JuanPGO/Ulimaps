@@ -1,5 +1,5 @@
 import { PuntoExterior } from "./PuntoExterior";
-import {connectToDB} from "./configuracionDB";
+import {connectToDB} from "./ConfiguracionDB";
 
 export class Administrador {
     usuario: string;
