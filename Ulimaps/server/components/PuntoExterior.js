@@ -1,3 +1,4 @@
+
 class PuntoExterior {
     constructor(nombre, latitud, longitud, imagen) {
         this.nombre = nombre;
