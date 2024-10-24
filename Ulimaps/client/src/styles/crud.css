@@ -28,16 +28,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative; /* Añadido para posicionamiento */
 }
 
 .navTitulo {
   flex-grow: 1;
   text-align: center;
+  position: absolute; /* Posicionamiento absoluto */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translateX(-50%); /* Ajuste fino del centrado */
 }
 
 .navTitulo h1 {
   margin: 0;
   font-size: 1.5rem;
+}
+
+.navExit {
+  margin-left: auto; /* Empuja el botón hacia la derecha */
+  padding-right: 2rem; /* Ajusta este valor según necesites */
 }
 
 .contenedorNav {
@@ -148,23 +157,27 @@ body {
   border-color: #dc3545;
 }
 
-@media (max-width: 768px) {
-  .contenedorCrud {
-    width: 95vw;
-    height: 95vh;
-  }
+#dropdown::after {
+  display: none;
+}
 
+@media (max-width: 768px) {
   .navHeader {
-    flex-direction: column;
+    flex-direction: row; /* Cambiado de column a row */
+    justify-content: space-between; /* Distribuye los elementos */
     align-items: center;
+    padding: 1rem 2rem; /* Añade padding horizontal */
   }
 
   .navExit {
-    margin-top: 1rem;
+    padding-right: 0; /* Elimina el padding extra en móviles */
   }
 
-  .contenedorNav {
-    justify-content: center;
+  .navTitulo {
+    position: static; /* Vuelve a la posición normal en móviles */
+    transform: none;
+    flex-grow: 1;
+    text-align: center;
   }
 
 }

@@ -1,14 +1,14 @@
 import {connectToDB} from '../Conexion.js';
 
-export class Parqueadero {
+export class Imagen {
 
     // CREATE
-    async createParqueadero(id_parqueadero, nombre, vehiculo, nombreTipo) {
+    async createImagen(id_imagen, nombre, puntoExterior) {
         const db = await connectToDB();
         try {
             // Parte 1: Buscar los valores necesarios
             const idPuntoExterior = await new Promise((resolve, reject) => {
-                db.get('SELECT id_puntoExterior FROM puntoInteresExterior WHERE nombre = ?', [nombre], (err, row) => {
+                db.get('SELECT id_puntoExterior FROM PuntoInteresExterior WHERE nombre = ?', [puntoExterior], (err, row) => {
                     if (err) {
                         console.error('Error al buscar id_puntoExterior:', err);
                         reject({
@@ -22,52 +22,34 @@ export class Parqueadero {
                 });
             });
 
-            const idTipo = await new Promise((resolve, reject) => {
-                db.get('SELECT id_tipo FROM Tipo WHERE nombreTipo = ?', [nombreTipo], (err, row) => {
-                    if (err) {
-                        console.error('Error al buscar id_tipo:', err);
-                        reject({
-                            type: 'DATABASE_ERROR',
-                            message: 'Error al verificar el id_tipo',
-                            error: err
-                        });
-                    } else {
-                        resolve(row ? row.id_tipo : null);
-                    }
-                });
-            });
-
             if (!idPuntoExterior) {
                 throw new Error(`El punto exterior '${nombre}' no existe.`);
             }
-
-            if (!idTipo) {
-                throw new Error(`El tipo '${nombreTipo}' no existe.`);
-            }
-
+            
             // Parte 2: Realizar la actualización
             return new Promise((resolve, reject) => {
-                const sql = 'SELECT COUNT(*) as count FROM Parqueadero WHERE id_parqueadero = ?';
+                const sql = 'SELECT COUNT(*) as count FROM Imagen WHERE id_imagen = ?';
                 
-                db.get(sql, [id_parqueadero], (err, row) => {
+                db.get(sql, [id_imagen], (err, row) => {
                     if (err) {
                         reject({
                             type: 'DATABASE_ERROR',
-                            message: 'Error al verificar el id_parqueadero',
+                            message: 'Error al verificar el id_imagen',
                             error: err
                         });
                         return;
                     }
     
+                    
                     if (row.count > 0) {
-                        // si el id existe
                         reject({
+                            // si existe id
                             type: 'ID_EXISTS',
-                            message: `El ID ${id_parqueadero} ya está en uso.`
+                            message: `El ID ${id_imagen} ya está en uso.`
                         });
                     } else {
-                        const sql = 'INSERT INTO parqueadero (id_parqueadero,id_puntoExterior, vehiculo, id_tipo) VALUES (?,?,?,?)';
-                        db.run(sql, [id_parqueadero,idPuntoExterior, vehiculo, idTipo], function(err) {
+                        const sql = 'INSERT INTO Imagen (id_imagen, nombre, id_puntoExterior) VALUES (?,?,?)';
+                        db.run(sql, [id_imagen,nombre, idPuntoExterior], function(err) {
                             if (err) {
                                 reject({
                                     type: 'INSERT_ERROR',
@@ -81,19 +63,18 @@ export class Parqueadero {
                     }
                 });
             });
-
         } finally {
             await db.close();
         }
     }
 
     // READ
-    async readParqueaderos() {
+    async readImagenes() {
         const db = await connectToDB();
         try {
             return new Promise((resolve, reject) => {
                 db.all(
-                    'SELECT p.id_parqueadero AS id, pe.nombre,p.vehiculo, t.nombreTipo  FROM Parqueadero p INNER JOIN PuntoInteresExterior pe ON pe.id_puntoExterior = p.id_puntoExterior INNER JOIN Tipo t ON p.id_tipo = t.id_tipo',
+                    'SELECT i.id_imagen AS id,i.nombre AS nombre, pe.nombre AS Punto_Exterior FROM Imagen i INNER JOIN PuntoInteresExterior pe ON pe.id_puntoExterior = i.id_puntoExterior',
                     [],
                     (err, rows) => {
                         if (err) {
@@ -109,17 +90,17 @@ export class Parqueadero {
         } finally {
             await db.close();
         }
-    }
+    }  
 
     // UPDATE
-    async updateParqueadero(id, nombre, vehiculo, nombreTipo) {
+    async updateImagen(id, nombre, puntoExterior) {
         const db = await connectToDB();
         try {
             // Parte 1: Buscar los valores necesarios
             const idPuntoExterior = await new Promise((resolve, reject) => {
-                db.get('SELECT id_puntoExterior FROM PuntoInteresExterior WHERE nombre = ?', [nombre], (err, row) => {
+                db.get('SELECT id_puntoExterior FROM PuntoInteresExterior WHERE nombre = ?', [puntoExterior], (err, row) => {
                     if (err) {
-                        console.error('Error al buscar id_tipo:', err);
+                        console.error('Error al buscar id_puntoExterior:', err);
                         reject(err);
                     } else {
                         resolve(row ? row.id_puntoExterior : null);
@@ -127,36 +108,22 @@ export class Parqueadero {
                 });
             });
 
-            const idTipo = await new Promise((resolve, reject) => {
-                db.get('SELECT id_tipo FROM Tipo WHERE nombreTipo = ?', [nombreTipo], (err, row) => {
-                    if (err) {
-                        console.error('Error al buscar id_tipo:', err);
-                        reject(err);
-                    } else {
-                        resolve(row ? row.id_tipo : null);
-                    }
-                });
-            });
 
             if (!idPuntoExterior) {
-                throw new Error(`El punto exterior '${nombre}' no existe.`);
-            }
-
-            if (!idTipo) {
-                throw new Error(`El tipo '${nombreTipo}' no existe.`);
+                throw new Error(`El Tipo '${puntoExterior}' no existe.`);
             }
 
             // Parte 2: Realizar la actualización
             return new Promise((resolve, reject) => {
                 const sql = `
-                    UPDATE Parqueadero 
-                    SET id_puntoExterior = ?, vehiculo = ?, id_tipo = ?
-                    WHERE id_parqueadero = ?
+                    UPDATE Imagen
+                    SET nombre = ?, id_puntoExterior = ?
+                    WHERE id_imagen = ?
                 `;
                 
-                db.run(sql, [idPuntoExterior, vehiculo, idTipo, id], function(err) {
+                db.run(sql, [nombre, idPuntoExterior, id], function(err) {
                     if (err) {
-                        console.error('Error en la actualización de Estructura:', err);
+                        console.error('Error en la actualización de la Imagen:', err);
                         reject(err);
                     } else {
                         console.log('Actualización exitosa. Filas afectadas:', this.changes);
@@ -170,11 +137,11 @@ export class Parqueadero {
     }
 
     // DELETE
-    async deleteParqueadero(id){
+    async deleteImagen(id){
         const db = await connectToDB();
         try {
             return new Promise((resolve, reject) => {
-                const sql = 'DELETE FROM Parqueadero WHERE id_parqueadero = ?;';
+                const sql = 'DELETE FROM Imagen WHERE id_imagen = ?;';
     
                 db.run(sql, [id], function(err) {
                     if (err) {
