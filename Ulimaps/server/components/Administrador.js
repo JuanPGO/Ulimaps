@@ -1,6 +1,7 @@
 // Administrador.js
 import {connectToDB} from '../Conexion.js';
-import PuntoExterior from './PuntoExterior.js';
+import {PuntoExterior} from './PuntoExterior.js';
+import bcrypt from 'bcrypt';
 
 export class Administrador {
     static puntoExterior = [new PuntoExterior()];
@@ -10,8 +11,8 @@ export class Administrador {
         this.contrasena = contrasena;
     }
 
-    // Consulta logging
-    async obtenerUsuario() {
+    // LOGGING
+    async readUsuario() {
         const db = await connectToDB();
         try {
             return new Promise((resolve, reject) => {
@@ -34,147 +35,44 @@ export class Administrador {
         }
     }
 
-    // Consultas Datatables
-    async BuscarPuntosExterior() {
+    async updateContrasena(anteriorContrasena, nuevaContrasena) {
         const db = await connectToDB();
         try {
+            const admin = await this.readUsuario();
+
+            if (!admin) {
+                throw new Error('No se encontró el administrador en la base de datos');
+            }
+
+            // Verificar si la contraseña anterior es correcta
+            const isMatch = await bcrypt.compare(anteriorContrasena, admin.contrasena);
+            if (!isMatch) {
+                throw new Error('La contraseña anterior es incorrecta');
+            }
+
+            // Hashear la nueva contraseña
+            const hashedPassword = await bcrypt.hash(nuevaContrasena, 10);
+
             return new Promise((resolve, reject) => {
-                db.all(
-                    'SELECT id_puntoExterior, nombre, latitud, longitud, activo FROM PuntoInteresExterior',
-                    [],
-                    (err, rows) => {
-                        if (err) {
-                            console.error('Error en la consulta SQL:', err);
-                            reject(err);
-                        } else {
-                            console.log('Puntos de interés exterior encontrados:', rows);
-                            resolve(rows);
-                        }
+                const sql = 'UPDATE Administrador SET contrasena = ? WHERE usuario = ?';
+                db.run(sql, [hashedPassword, this.usuario], function(err) {
+                    if (err) {
+                        console.error('Error en la consulta SQL:', err);
+                        reject(err);
+                    } else {
+                        console.log('Actualización exitosa. Número de filas afectadas:', this.changes);
+                        resolve('update');
                     }
-                );
+                });
             });
         } finally {
             await db.close();
         }
     }
+    
 
-    async BuscarEstructuras() {
-        const db = await connectToDB();
-        try {
-            return new Promise((resolve, reject) => {
-                db.all(
-                    'SELECT e.id_estructura, e.bloque,  pe.nombre, t.nombreTipo FROM Estructura e INNER JOIN PuntoInteresExterior pe ON pe.id_puntoExterior = e.id_puntoExterior INNER JOIN Tipo t ON t.id_tipo = e.id_tipo',
-                    [],
-                    (err, rows) => {
-                        if (err) {
-                            console.error('Error en la consulta SQL:', err);
-                            reject(err);
-                        } else {
-                            console.log('Puntos de interés exterior encontrados:', rows);
-                            resolve(rows);
-                        }
-                    }
-                );
-            });
-        } finally {
-            await db.close();
-        }
-    }
-
-    async BuscarParqueaderos() {
-        const db = await connectToDB();
-        try {
-            return new Promise((resolve, reject) => {
-                db.all(
-                    'SELECT p.id_parqueadero, pe.nombre,p.vehiculo, t.nombreTipo  FROM Parqueadero p INNER JOIN PuntoInteresExterior pe ON pe.id_puntoExterior = p.id_puntoExterior INNER JOIN Tipo t ON p.id_tipo = t.id_tipo',
-                    [],
-                    (err, rows) => {
-                        if (err) {
-                            console.error('Error en la consulta SQL:', err);
-                            reject(err);
-                        } else {
-                            console.log('Puntos de interés exterior encontrados:', rows);
-                            resolve(rows);
-                        }
-                    }
-                );
-            });
-        } finally {
-            await db.close();
-        }
-    }
-
-    async BuscarPisos() {
-        const db = await connectToDB();
-        try {
-            return new Promise((resolve, reject) => {
-                db.all(
-                    'SELECT p.id_piso,p.nivel, e.bloque,pe.nombre, p.plano FROM Piso p INNER JOIN Estructura e ON p.id_estructura = e.id_estructura INNER JOIN PuntoInteresExterior pe ON e.id_puntoExterior = pe.id_puntoExterior',
-                    [],
-                    (err, rows) => {
-                        if (err) {
-                            console.error('Error en la consulta SQL:', err);
-                            reject(err);
-                        } else {
-                            console.log('Puntos de interés exterior encontrados:', rows);
-                            resolve(rows);
-                        }
-                    }
-                );
-            });
-        } finally {
-            await db.close();
-        }
-    }
-
-    async BuscarPuntosInterior() {
-        const db = await connectToDB();
-        try {
-            return new Promise((resolve, reject) => {
-                db.all(
-                    'SELECT pi.id_puntoInterior,pi.nombre,pi.activo,t.nombreTipo, e.bloque, pe.nombre FROM PuntoInteresInterior pi INNER JOIN Tipo t ON pi.id_tipo = t.id_tipo INNER JOIN Piso p ON p.id_piso = pi.id_piso INNER JOIN Estructura e ON e.id_estructura  = p.id_estructura INNER JOIN PuntoInteresExterior pe ON pe.id_puntoExterior = e.id_puntoExterior',
-                    [],
-                    (err, rows) => {
-                        if (err) {
-                            console.error('Error en la consulta SQL:', err);
-                            reject(err);
-                        } else {
-                            console.log('Puntos de interés exterior encontrados:', rows);
-                            resolve(rows);
-                        }
-                    }
-                );
-            });
-        } finally {
-            await db.close();
-        }
-    }
-
-    async BuscarImagenes() {
-        const db = await connectToDB();
-        try {
-            return new Promise((resolve, reject) => {
-                db.all(
-                    'SELECT i.id_imagen,i.nombre AS nombreImagen,pe.nombre FROM Imagen i INNER JOIN PuntoInteresExterior pe ON pe.id_puntoExterior = i.id_puntoExterior',
-                    [],
-                    (err, rows) => {
-                        if (err) {
-                            console.error('Error en la consulta SQL:', err);
-                            reject(err);
-                        } else {
-                            console.log('Puntos de interés exterior encontrados:', rows);
-                            resolve(rows);
-                        }
-                    }
-                );
-            });
-        } finally {
-            await db.close();
-        }
-    }   
-
-    // Consultas Formulario
-    async BuscarTipos() {
+    // PRELOADING
+    async loadTipos() {
         const db = await connectToDB();
         try {
             return new Promise((resolve, reject) => {
@@ -198,7 +96,7 @@ export class Administrador {
     }   
 
 
-    async TipoVehiculo() {
+    async loadVehiculo() {
         const db = await connectToDB();
         try {
             return new Promise((resolve, reject) => {
@@ -221,7 +119,7 @@ export class Administrador {
         }
     } 
 
-    async obtenerPuntoExterior() {
+    async loadPuntoExterior() {
         const db = await connectToDB();
         try {
             return new Promise((resolve, reject) => {
@@ -244,12 +142,12 @@ export class Administrador {
         }
     } 
     
-    async getEstructuras() {
+    async loadBloque() {
         const db = await connectToDB();
         try {
             return new Promise((resolve, reject) => {
                 db.all(
-                    'SELECT bloque From Estructura',
+                    'SELECT DISTINCT bloque From Estructura',
                     [],
                     (err, rows) => {
                         if (err) {
@@ -267,34 +165,28 @@ export class Administrador {
         }
     }
 
-    async editarPuntoExterior(id, nombre, latitud, longitud){
-    const db = await connectToDB();
-    try {
-        return new Promise((resolve, reject) => {
-            const sql = `
-                UPDATE puntoInteresExterior SET 
-                    nombre = ?, 
-                    latitud = ?, 
-                    longitud = ?, 
-                WHERE id_puntoExterior = ?
-            `;
-
-            db.run(sql, [nombre, latitud, longitud, id], function(err) {
-                if (err) {
-                    console.error('Error en la consulta SQL:', err);
-                    reject(err);
-                } else {
-                    console.log('Actualización exitosa. Número de filas afectadas:', this.changes);
-                    resolve('update');
-                }
+    async loadPiso() {
+        const db = await connectToDB();
+        try {
+            return new Promise((resolve, reject) => {
+                db.all(
+                    'SELECT plano From Piso',
+                    [],
+                    (err, rows) => {
+                        if (err) {
+                            console.error('Error en la consulta SQL:', err);
+                            reject(err);
+                        } else {
+                            console.log('Pisos encontrados:', rows);
+                            resolve(rows);
+                        }
+                    }
+                );
             });
-        });
         } finally {
             await db.close();
         }
     }
 
 
-
 }
-
