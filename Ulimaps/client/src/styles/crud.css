@@ -1,86 +1,183 @@
-@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap");
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: "Kaisei Decol", serif !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Kaisei Decol", serif !important;
+  background: #f1eeee;
 }
 
 .contenedorCrud {
-    background: #f1eeee;
-    max-width: 90vw;
-    max-height: 90vh;
-    width: 80vw;
-    height: 90vh;
-    display: flex;
-    align-items: start;
-    border-radius: 15px 15px;
+  background: #ffffff;
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.navHeader{
-    width: 100%;
-    background-color: #616060;
-    box-shadow: 0 0 20px rgb(63, 62, 62);
-    color: white;
-    height: 10vh;
-    border-radius: 15px 15px 0 0;
-    display: flex;
-    flex-direction: row;
+.navHeader {
+  background-color: #616060;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Añadido para posicionamiento */
+}
+
+.navTitulo {
+  flex-grow: 1;
+  text-align: center;
+  position: absolute; /* Posicionamiento absoluto */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translateX(-50%); /* Ajuste fino del centrado */
+}
+
+.navTitulo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.navExit {
+  margin-left: auto; /* Empuja el botón hacia la derecha */
+  padding-right: 2rem; /* Ajusta este valor según necesites */
+}
+
+.contenedorNav {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dropdownTitle {
+  color: rgb(97, 57, 4);
+}
+
+.contenedorTabla {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-responsive {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.encabezadocrud {
+  background-color: #f8f9fa;
+}
+
+.contenido {
+  vertical-align: middle;
+}
+
+.pagination {
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.modal-content {
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+  color: #616060;
+  font-weight: 500;
+}
+
+.modal-body {
+  padding: 2rem;
+  max-height: 400px; /* Ajusta según necesites */
+  overflow-y: auto;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #616060;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.acciones {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.01rem; /* Ajusta el espacio entre botones */
+}
+
+/* Ajuste para el botón de cerrar en el modal */
+.modal-header .close {
+  color: #616060;
+}
+
+/* Estilos para checkbox */
+.form-check-input:checked {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+#dropdown::after {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navHeader {
+    flex-direction: row; /* Cambiado de column a row */
+    justify-content: space-between; /* Distribuye los elementos */
     align-items: center;
-    justify-content: space-evenly;
-}
+    padding: 1rem 2rem; /* Añade padding horizontal */
+  }
 
-.contenedorNav{
-    width: 100%;
-    height: 7vh;
-    margin-top: 10px;
+  .navExit {
+    padding-right: 0; /* Elimina el padding extra en móviles */
+  }
 
-}
-
-.dropdownTitle{
-    color: rgb(97, 57, 4);
-}
-
-.contenedorTabla{
-    margin-top: 10px;
-    height: 85vh;
-    width: 95%;
-}
-
-.contenedorTabla th{
-    max-width: 1fr;
-}
-
-
-
-@media (max-width: 1600px){
-
-    .contenedorCrud {
-        background: #f1eeee;
-        width: 90vw;
-        height: 90vh;
-        display: flex;
-        border-radius: 15px;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 1000px){
-
-
-    .contenedorCrud {
-        background: #f1eeee;
-        width: 80vw;
-        height: 90vh;
-        display: flex;
-        border-radius: 15px;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
+  .navTitulo {
+    position: static; /* Vuelve a la posición normal en móviles */
+    transform: none;
+    flex-grow: 1;
+    text-align: center;
+  }
 
 }
