@@ -4,6 +4,7 @@ import WelcomeInterface from './views/welcome.jsx';
 import LoginInterface from './views/logging.jsx';
 import MapInterface from './views/map.jsx';
 import CrudInterface from './views/crud.jsx';
+import ProtectedRoute from './views/protectedRoute.jsx';
 
 function App() {
   return (
@@ -13,7 +14,10 @@ function App() {
           <Route path="/" element={<WelcomeInterface />} />
           <Route path="/login" element={<LoginInterface />} />
           <Route path="/map" element={<MapInterface />} />
-          <Route path="/crud" element={<CrudInterface />} />
+          <Route path="/crud" element={
+            <ProtectedRoute>
+                <CrudInterface />
+            </ProtectedRoute>} />
         </Routes>
       </div>
     </Router>
