@@ -1,28 +1,24 @@
 // archivo map.jsx
 import '../styles/map.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRoute, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import customMarkerIcon from '../assets/img/botones/locationDot.png'; // Ícono PNG
 
 const MapInterface = () => {
+
     const customIcon = new L.Icon({
         iconUrl: customMarkerIcon,
-        iconSize: [32, 32],
-        iconAnchor: [16, 32],
+        iconSize: [25, 32],
+        iconAnchor: [12, 32],
         popupAnchor: [0, -32],
     });
 
     return (
         <div className="contenedor-bienvenidamap">
             <div className="navegacionDiv">
-                <div className="boton-nav-div1">
-                    <Link to="/map" className="boton-nav">
-                        <FontAwesomeIcon icon={faRoute} style={{ color: "#ffffff", padding: 0, margin: 0 }} />
-                    </Link>
-                </div>
 
                 <div className="boton-nav-div1">
                     <Link to="/" className="boton-nav">
@@ -40,13 +36,65 @@ const MapInterface = () => {
 
                     <Marker position={[4.806250, -75.760109]} icon={customIcon}>
                         <Popup>
-                            <button>Botón</button>
+                            <div className="contenedorPop">
+                                <div className="headerPop">
+                                    <span>Edificio Daniel Becerra Piedrahita</span>
+                                </div>
+                                <div className="bodyPop">
+
+                                    <div className="imagePop">
+                                        <img src="./client/src/assets/img/fotos/fotoBienvenida.jpg" alt="" />
+                                    </div>
+
+                                    <div className="infoPop">
+
+                                        <div className="nomPop">
+                                            <span>Bloque C</span>
+                                        </div>
+                                        <div className="buttonPop">
+
+                                            <Link to="/viewEstructura" className="boton-out">
+                                                <button>
+                                                    <span>Ver más</span>
+                                                </button>
+                                            </Link>
+                                            
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
                         </Popup>
                     </Marker>
 
                     <Marker position={[4.806228, -75.760606]} icon={customIcon}>
                         <Popup>
-                            <span>Hola</span>
+                        <div className="contenedorPop">
+                                <div className="headerPop">
+                                    <span>Edificio Alberto Mesa Abadía</span>
+                                </div>
+                                <div className="bodyPop">
+
+                                    <div className="imagePop">
+                                        <img src="./client/src/assets/img/fotos/fotoBienvenida.jpg" alt="" />
+                                    </div>
+
+                                    <div className="infoPop">
+
+                                        <div className="nomPop">
+                                            <span>Bloque Laboratorios</span>
+                                        </div>
+                                        <div className="buttonPop">
+                                            <button>
+                                                <span>Ver más</span>
+                                            </button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
                         </Popup>
                     </Marker>
                 </MapContainer>
