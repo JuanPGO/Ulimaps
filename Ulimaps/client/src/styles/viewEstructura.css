@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.contenedorMore {
+    background: #c9081f;
+    max-width: 100vw;
+    max-height: 90vh;
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedor-interior5{
+    height: 55%;
+    width: 100%;
+}
+
+.mainTitulo{
+    border-radius: 15px 15px 0 0;
+    background-color:#c00d1f;
+    text-align: center;
+    height: 40%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mainTitulo span{
+    color: #ffff;
+    font-size: 40px;
+}
+
+.mainImagenes{
+    width: 100%;
+    height: 60%;
+}
+
+.boton-navEstructura{
+    background-color: #810613;
+    border-radius: 50px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carouselContainerImages{
+    width: 100%;
+    height: 100%;
+}
+
+.carouselImages{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.mainImagenes img{
+    object-fit: fill;
+    width: 100%;
+    height: 30vh;
+}
+
+.contenedor-interior6{
+    height: 45%;
+    width: 100%;
+    background-color:#810613;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-radius: 0 0  15px 15px;
+}
+
+.infoEstructura{
+    width: 100%;
+    text-align: center;
+}
+
+.infoEstructura span{
+    font-size: 25px;
+    color: #ffff;
+}
+
+.pisosEstructura{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pisosEstructura button{
+    border: none;
+    border-radius: 10px;
+    
+}
+
+.pisosEstructura button:hover{
+    background-color: #a69f17;
+    color: #ffff;
+}
+
+.pisosEstructura button span{
+    font-size: 20px;
+}
+
+.planosImages{
+    padding: 10px;
+    width: 100%;
+    height: 20vh;
+}
+
+.planosImages img{
+    object-fit: fill;
+    width: 100%;
+    height: 30vh;
+}
+
+.mainPlanos{
+    width: 100%;
+    height: 100%;
+}
+
+.mainPlanos .carouselContainerPlanos{
+    width: 100%;
+    height: 100%;
+}
+
+.carouselContainerPlanos img{
+    object-fit: fill;
+    width: 100%;
+    height: 35vh;
+    border-radius: 0 0 15px 15px;
+}
+
+.pisoName{
+    color: #ffffff;
+}
+
+
+
+@media (max-width: 1600px){
+
+    .contenedorMore {
+        background: #c9081f;
+        width: 30vw;
+        height: 90vh;
+        display: flex;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .mainTitulo span{
+        color: #ffff;
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 1300px){
+
+    .contenedorMore {
+        background: #c9081f;
+        width: 90vw;
+        height: 90vh;
+        display: flex;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .mainTitulo span{
+        color: #ffff;
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 700px){
+
+    .contenedorMore {
+        background: #c9081f;
+        width: 90vw;
+        height: 90vh;
+        display: flex;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .mainTitulo span{
+        color: #ffff;
+        font-size: 28px;
+    }
+}
