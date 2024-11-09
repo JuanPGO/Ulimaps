@@ -19,7 +19,6 @@ const MapInterface = () => {
     return (
         <div className="contenedor-bienvenidamap">
             <div className="navegacionDiv">
-
                 <div className="boton-nav-div1">
                     <Link to="/" className="boton-nav">
                         <FontAwesomeIcon icon={faArrowRightFromBracket} rotation={180} style={{ color: "#ffffff" }} />
