@@ -59,7 +59,125 @@ body {
     border-radius: 0 0 15px 15px;
 }
 
+.leaflet-popup-content {
+    margin: 0 !important;
+    width: 300px !important;
+  }
+  
+  .leaflet-popup-content-wrapper {
+    padding: 0 !important;
+    border-radius: 8px !important;
+  }
+  
+  /* Ajustar el botón de cerrar */
+  .leaflet-popup-close-button {
+    display: flex !important;
+    padding-top: 5px;
+    height: 22% !important;
+    color: white !important;
+  }
+  
+  .contenedorPop {
+    width: 100%;
+    height: 100%;
+  }
+  
 
+  .headerPop {
+    background-color: #b60318;
+    border-radius: 8px 8px 0 0;
+    padding: 8px 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .headerPop span {
+    font-family: "Kaisei Decol", serif;
+    color: #ffff;
+    font-size: 14px;
+    padding-left: 10px;
+  }
+  
+  .bodyPop {
+    height: 120px; 
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  .imagePop {
+    width: 50%;
+    height: 100%; 
+  }
+  
+  .imagePop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .infoPop {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px 0;
+  }
+  
+  .nomPop {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .nomPop span {
+    font-family: "Kaisei Decol", serif;
+    font-size: 13px;
+    color: #000000;
+    display: block;
+  }
+  
+  .buttonPop {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+  }
+  
+  .buttonPop button {
+    border: none;
+    border-radius: 20px;
+    background-color: #b60318;
+    border: 2px solid #e70722;
+    padding: 6px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .buttonPop button:hover {
+    background-color: #660510;
+    border: 2px solid #e70722;
+  }
+  
+  .buttonPop span {
+    font-family: "Kaisei Decol", serif;
+    color: #ffff;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+.bloquePop {
+    display: block;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 4px;
+}
 @media (max-width: 1600px){
 
 

@@ -89,6 +89,9 @@ const LoginInterface = () => {
                                     <span>Ingresar</span>
                                 </button>
                             </div>
+                            <p className="login-note">
+                                <b>Nota:</b>Ingreso solo disponible para administradores
+                            </p>
                         </form>
                     </div>
 
