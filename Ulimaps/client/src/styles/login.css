@@ -126,6 +126,17 @@ body {
     height: 2vh;
 }
 
+.login-note {
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-note b {
+    margin-right: 5px;
+}
+
 @media (max-width: 1600px) {
     .contenedor-bienvenida1 {
         width: 30vw;
