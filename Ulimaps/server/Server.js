@@ -9,6 +9,7 @@ import { ParqueaderoController } from './controllers/ParqueaderoController.js';
 import { PisoController } from './controllers/PisoController.js';
 import { PuntoInteriorController } from './controllers/PuntoInteriorController.js';
 import { ImagenController } from './controllers/ImagenController.js';
+import { MapaController } from './controllers/MapaController.js';
 import { expressjwt } from 'express-jwt';  // Changed import
 import jwt from 'jsonwebtoken';
 
@@ -27,6 +28,7 @@ const pisoController = new PisoController();
 const puntoExteriorController = new PuntoExteriorController();
 const puntoInteriorController = new PuntoInteriorController();
 const imagenController = new ImagenController();
+const mapaController = new MapaController();
 
 
 const SECRET_KEY = '753159'; // Cambia esto por una clave segura
@@ -386,6 +388,69 @@ app.get('/pisos_load', async (req, res) => {
     }
 });
 
+// visualización en el mapa
+app.get('/estructura/:id', async (req, res) => {
+    try {
+        const mapa = await mapaController.getEstructura(req.params.id);
+        console.log('Enviando estructura:', mapa); // Debug
+        res.json(mapa || null);
+    } catch (error) {
+        console.error('Error al obtener estructura:', error);
+        res.status(500).json({ error: 'Error al obtener estructura' });
+    }
+})
+
+app.get('/imagen/:id', async (req, res) => {
+    try {
+        const mapa = await mapaController.getImagenes(req.params.id);
+        console.log('Enviando imagenes:', mapa); // Debug
+        res.json(mapa || null);
+    } catch (error) {
+        console.error('Error al obtener la imagen:', error);
+        res.status(500).json({ error: 'Error al obtener la imagen' });
+    }
+})
+
+app.get('/allImagenes/:id', async (req, res) => {
+    try {
+        const mapa = await mapaController.getAllImagenes(req.params.id);
+        console.log('Enviando imagenes:', mapa); // Debug
+        res.json(mapa || null);
+    } catch (error) {
+        console.error('Error al obtener las imagenes:', error);
+        res.status(500).json({ error: 'Error al obtener las imagenes' });
+    }
+})
+
+app.get('/puntos_exterior/:id', async (req, res) => {
+    try {
+        const mapa = await mapaController.getPuntoInteresExterior(req.params.id);
+        res.json(mapa || null);
+    } catch (error) {
+        console.error('Error al obtener el punto exterior:', error);
+        res.status(500).json({ error: 'Error al obtener el punto exterior' });
+    }
+});
+
+app.get('/pisos/:id', async (req, res) => {
+    try {
+        const mapa = await mapaController.getPisos(req.params.id);
+        res.json(mapa || null);
+    } catch (error) {
+        console.error('Error al obtener el piso:', error);
+        res.status(500).json({ error: 'Error al obtener el piso' });
+    }
+});
+
+app.get('/puntos_interior/:id', async (req, res) => {
+    try {
+        const mapa = await mapaController.getPuntosInteresInterior(req.params.id);
+        res.json(mapa || []);
+    } catch (error) {
+        console.error('Error al obtener los puntos interiores:', error);
+        res.status(500).json({ error: 'Error al obtener los puntos interiores' });
+    }
+});
 
 // UPDATE
 app.put('/puntos_exterior/:id', async (req, res) => {
