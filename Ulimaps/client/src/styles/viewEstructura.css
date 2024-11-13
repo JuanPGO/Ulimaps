@@ -40,8 +40,9 @@ body {
 
 .mainTitulo span{
     color: #ffff;
-    font-size: 40px;
+    font-size: 5px;
     font-weight: 600;
+    padding-top: 0.5rem;
 }
 
 .boton-navEstructura{
@@ -49,6 +50,7 @@ body {
     border-radius: 50px;
     height: 30px;
     width: 30px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,7 +63,7 @@ body {
 
 .contenedor-interior6{
     width: 100%;
-    height: 75%;
+    height: 100%;
     background: linear-gradient(#1000008c,#0f0000);
     border-radius: 15px;
 }
@@ -69,13 +71,16 @@ body {
 .carouselContainerImages{
     width: 100%;
     height: 60vh;
+    padding-bottom: 1.1rem;
+    align-items: center;
+    display: flex;
+    align-content: center;
 }
 
 .carouselContainerImages img{
     padding: 10px;
-    object-fit: contain;
-    width: 100%;
-    height: 60vh;
+    width: 100px;
+    height: 300px; /*tamaño estandar imagenes del carrusel*/
     border-radius: 15px;
 }
 
@@ -98,18 +103,121 @@ body {
 .carouselContainerPisos{
     width: 100%;
     height: 60vh;
+    padding-bottom: 1.1rem;
+    align-items: center;
+    display: flex;
+    align-content: center;
 }
 
 .carouselContainerPisos img{
     padding: 10px;
-    object-fit: contain;
-    width: 100%;
-    height: 60vh;
+    width: 100px;
+    height: 300px; /*tamaño estandar imagenes del carrusel*/
     border-radius: 15px;
 }
 
 .tablePuntos{
-    margin: 10px;
+    margin: auto;
+}
+
+.table-container {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.table-wrapper {
+    flex: 1;
+    overflow: auto;
+    margin-bottom: 5px; /* Reducido de 10px */
+    border-radius: 8px;
+}
+
+.tablePuntos {
+    margin: 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tablePuntos thead th {
+    background-color: #f8f9fa;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+}
+
+.tablePuntos tbody td {
+    padding: 8px;
+    border: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+/* Ajustes para la paginación */
+.pagination-container {
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-top: 1px solid #dee2e6;
+    margin-top: 0;
+}
+
+.pagination {
+    margin: 0;
+    gap: 2px;
+}
+
+.pagination .page-item .page-link {
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+/* Estilos del scrollbar */
+.table-wrapper::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .table-container {
+        padding: 0 5px;
+        margin: 5px;
+    }
+    
+    .tablePuntos {
+        font-size: 14px;
+    }
+    
+    .tablePuntos thead th,
+    .tablePuntos tbody td {
+        padding: 6px;
+    }
+    
+    .pagination .page-item .page-link {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 1600px){

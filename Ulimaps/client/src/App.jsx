@@ -6,6 +6,7 @@ import MapInterface from './views/map.jsx';
 import CrudInterface from './views/crud.jsx';
 import ViewMoreInterface from './views/viewEstructura.jsx';
 import ProtectedRoute from './views/protectedRoute.jsx';
+import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 
 
 function App() {
