@@ -157,6 +157,7 @@ const ViewMoreInterface = () => {
                                                   e.target.src = '/assets/img/placeholder.jpg';
                                               }}
                                           />
+                                          <h3>Piso: {piso.nivel || 'No especificado'}</h3>
                                       </CarouselItem>
                                   ))}
                               </Carousel>

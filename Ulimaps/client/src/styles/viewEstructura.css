@@ -84,6 +84,11 @@ body {
     border-radius: 15px;
 }
 
+.carouselContainerPisos h3 {
+    text-align: center;
+    color: white;
+}
+
 .tabs button {
     border-radius: 0 0  5px 5px;
     color: rgb(0, 0, 0);

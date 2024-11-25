@@ -155,6 +155,7 @@ export class Mapa {
                     `SELECT 
                         p.id_piso,
                         p.id_estructura,
+                        p.nivel,
                         e.id_puntoExterior,
                         p.plano
                     FROM Piso p 
